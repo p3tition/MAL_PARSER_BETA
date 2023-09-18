@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="testanch" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: #0E0B16;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.malparser.MainController">
+   <VBox fx:id="mainVBox">
+      <Pane fx:id="topPane" onMouseDragged="#handleMovementAction" onMousePressed="#handleClickAction" style="-fx-border-color: #A239CA;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="titleLabel" layoutX="573.0" layoutY="0.0" prefHeight="39.0" prefWidth="135.0" text="MAL-PARSER" textAlignment="CENTER" textFill="#a239ca">
+               <font>
+                  <Font name="Consolas" size="24.0" />
+               </font>
+            </Label>
+            <AnchorPane fx:id="windowButtons" layoutX="1165.0" layoutY="5.0" prefHeight="30.0" prefWidth="110.0">
+               <children>
+                  <Button fx:id="btMin" mnemonicParsing="false" onAction="#handleMinAction" styleClass="btn_window" stylesheets="@styles.css" text="_" textAlignment="CENTER">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btMax" layoutX="39.0" mnemonicParsing="false" onAction="#handleMaximizeAction" styleClass="btn_window" stylesheets="@styles.css" text="□" textAlignment="CENTER">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button fx:id="btClose" layoutX="77.0" mnemonicParsing="false" onAction="#handleCloseAction" styleClass="btn_window" stylesheets="@styles.css" text="x" textAlignment="CENTER">
+                     <font>
+                        <Font name="Consolas" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </Pane>
+   </VBox>
+   <GridPane layoutY="40.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1280.0">
+     <columnConstraints>
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="635.0" minWidth="10.0" prefWidth="204.0" />
+       <ColumnConstraints hgrow="SOMETIMES" maxWidth="1154.0" minWidth="10.0" prefWidth="1076.0" />
+     </columnConstraints>
+     <rowConstraints>
+       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+     </rowConstraints>
+      <children>
+         <VBox styleClass="left_menu">
+            <children>
+               <Button fx:id="sideMenuBt1" mnemonicParsing="false" onAction="#showPaneAnime" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="ANIME">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt2" mnemonicParsing="false" onAction="#showPaneManga" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="MANGA">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt3" mnemonicParsing="false" onAction="#showPaneCharacters" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="CHARACTERS">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt4" mnemonicParsing="false" onAction="#showPaneGenres" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="GENRES">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt5" mnemonicParsing="false" onAction="#showPanePeople" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="PEOPLE">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt6" mnemonicParsing="false" onAction="#showPaneProducers" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="PRODUCERS">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt11" mnemonicParsing="false" onAction="#showPaneSettings" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="SETTINGS">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+               <Button fx:id="sideMenuBt12" mnemonicParsing="false" onAction="#showPaneAbout" prefHeight="80.0" prefWidth="295.0" styleClass="side-button" stylesheets="@styles.css" text="ABOUT">
+                  <font>
+                     <Font name="Consolas" size="24.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets top="1.0" />
+                  </VBox.margin>
+               </Button>
+            </children>
+            <GridPane.margin>
+               <Insets top="1.0" />
+            </GridPane.margin>
+         </VBox>
+         <StackPane GridPane.columnIndex="1" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+            <children>
+               <VBox fx:id="paneAnime">
+                  <children>
+                     <Label text="ANIME" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                     <GridPane prefHeight="636.0" prefWidth="1076.0">
+                       <columnConstraints>
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.0" minWidth="10.0" prefWidth="319.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="946.0" minWidth="10.0" prefWidth="329.0" />
+                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="946.0" minWidth="10.0" prefWidth="419.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+                        <children>
+                           <VBox prefHeight="584.0" prefWidth="524.0">
+                              <children>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="138.0" styleClass="checkbox_style" stylesheets="@styles.css" text="USE MAL ID'S" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="approved" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="default title" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="japanese title" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="englsih title" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="title" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="type" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="source" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="episodes" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="status" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="airing" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="584.0" prefWidth="524.0" GridPane.columnIndex="1">
+                              <children>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="aired from\to" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="138.0" styleClass="checkbox_style" stylesheets="@styles.css" text="duration" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="192.0" styleClass="checkbox_style" stylesheets="@styles.css" text="raiting" textFill="WHITE" wrapText="true">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="181.0" styleClass="checkbox_style" stylesheets="@styles.css" text="score(MAL)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="192.0" styleClass="checkbox_style" stylesheets="@styles.css" text="scored_by(MAL users)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="rank" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="popularity" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="members" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="favorites" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="synopsis" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="background" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="605.0" prefWidth="425.0" GridPane.columnIndex="2">
+                              <children>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="season" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="year" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="250.0" styleClass="checkbox_style" stylesheets="@styles.css" text="broadcast(day,time, timezone)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="188.0" styleClass="checkbox_style" stylesheets="@styles.css" text="producers(MAL id)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="studios(MAL id)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="226.0" styleClass="checkbox_style" stylesheets="@styles.css" text="array of genres(MAL id)" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="250.0" styleClass="checkbox_style" stylesheets="@styles.css" text="array of relations(MAL titles id) and relation name" textFill="WHITE" wrapText="true">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="192.0" styleClass="checkbox_style" stylesheets="@styles.css" text="save jpg large image (check settings)" textFill="WHITE" wrapText="true">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="181.0" styleClass="checkbox_style" stylesheets="@styles.css" text="YT trailer id" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <CheckBox mnemonicParsing="false" prefHeight="55.0" prefWidth="150.0" styleClass="checkbox_style" stylesheets="@styles.css" text="YT trailer url" textFill="WHITE">
+                                    <font>
+                                       <Font name="Consolas" size="14.0" />
+                                    </font>
+                                 </CheckBox>
+                                 <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="250.0" styleClass="start_btn" stylesheets="@styles.css" text="START" textFill="#e7dfdd">
+                                    <VBox.margin>
+                                       <Insets top="10.0" />
+                                    </VBox.margin>
+                                    <font>
+                                       <Font size="18.0" />
+                                    </font>
+                                 </Button>
+                              </children>
+                           </VBox>
+                        </children>
+                     </GridPane>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneManga" visible="false">
+                  <children>
+                     <Label text="MANGA" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneCharacters" visible="false">
+                  <children>
+                     <Label text="CHARACTERS" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneGenres" visible="false">
+                  <children>
+                     <Label text="GENRES" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="panePeople" visible="false">
+                  <children>
+                     <Label text="PEOPLE" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneProducers" visible="false">
+                  <children>
+                     <Label text="PRODUCERS" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneSettings" visible="false">
+                  <children>
+                     <Label text="SETTINGS" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+               <VBox fx:id="paneAbout" visible="false">
+                  <children>
+                     <Label text="ABOUT" textFill="WHITE">
+                        <font>
+                           <Font name="Consolas" size="48.0" />
+                        </font>
+                     </Label>
+                  </children>
+                  <StackPane.margin>
+                     <Insets left="10.0" />
+                  </StackPane.margin>
+                  <opaqueInsets>
+                     <Insets left="10.0" />
+                  </opaqueInsets>
+               </VBox>
+            </children>
+         </StackPane>
+      </children>
+   </GridPane>
+</AnchorPane>
