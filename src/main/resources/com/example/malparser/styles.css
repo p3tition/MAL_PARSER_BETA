@@ -62,3 +62,22 @@
 .checkbox_style:hover{
     -fx-border-color: #A239CA;
 }
+
+.checkbox_style .box {
+
+    -fx-background-color: #E7DFDD;
+    -fx-border-color:#E7DFDD;
+    -fx-border-radius:2px;
+
+}
+
+.checkbox_style:selected .mark {
+
+    -fx-background-color: #E7DFDD;
+
+}
+
+.checkbox_style:selected .box {
+
+    -fx-background-color: #A239CA;
+}

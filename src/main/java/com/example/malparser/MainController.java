@@ -17,97 +17,76 @@ import javafx.stage.Window;
 public class MainController {
     private double xOffset = 0;
     private double yOffset = 0;
-    @FXML
-    private Button btMin;
-    @FXML
-    private Button btMax;
-    @FXML
-    private Button btClose;
-    @FXML
-    private Pane topPane;
-    @FXML
-    private Label titleLabel;
-    @FXML
-    private AnchorPane windowButtons;
-    @FXML
-    private VBox paneAnime;
-    @FXML
-    private VBox paneManga;
-    @FXML
-    private VBox paneCharacters;
-    @FXML
-    private VBox paneGenres;
-    @FXML
-    private VBox panePeople;
-    @FXML
-    private VBox paneProducers;
-    @FXML
-    private VBox paneSettings;
-    @FXML
-    private VBox paneAbout;
+    @FXML private Button btMax;
+    @FXML private Button btClose;
+    @FXML private Pane topPane;
+    @FXML private Label titleLabel;
+    @FXML private AnchorPane windowButtons;
+    @FXML private VBox paneAnime;
+    @FXML private VBox paneManga;
+    @FXML private VBox paneCharacters;
+    @FXML private VBox paneGenres;
+    @FXML private VBox panePeople;
+    @FXML private VBox paneProducers;
+    @FXML private VBox paneSettings;
+    @FXML private VBox paneAbout;
 
-    @FXML
-    public void initialize() {
+    @FXML public void initialize() {
         hideAllPanesExcept(paneAnime);
     }
-    @FXML
-    protected void handleCloseAction(ActionEvent event) {
-        Stage stage = (Stage) btClose.getScene().getWindow();
-        stage.close();
+    @FXML protected void handleCloseAction(ActionEvent event) {
+        getStage().close();
     }
 
-    @FXML
-    protected void handleMinAction(ActionEvent event) {
-        Stage stage = (Stage) btMin.getScene().getWindow();
-        stage.setIconified(true);
+    @FXML protected void handleMinAction(ActionEvent event) {
+        getStage().setIconified(true);
     }
 
-    @FXML
-    protected  void handleClickAction(MouseEvent event){
+    @FXML protected  void handleClickAction(MouseEvent event){
         Stage stage = (Stage) topPane.getScene().getWindow();
         xOffset = stage.getX() - event.getScreenX();
         yOffset = stage.getY() - event.getScreenY();
     }
-    @FXML
-    protected void handleMovementAction(MouseEvent event){
-        Stage stage = (Stage) topPane.getScene().getWindow();
+    @FXML protected void handleMovementAction(MouseEvent event) {
+        Stage stage = getStage();
         stage.setX(event.getScreenX() + xOffset);
         stage.setY(event.getScreenY() + yOffset);
     }
 
-    @FXML
-    protected void handleMaximizeAction(ActionEvent event) {
-        Stage stage = (Stage) btMax.getScene().getWindow();
+    @FXML protected void handleMaximizeAction(ActionEvent event) {
+        Stage stage = getStage();
         if (stage.isMaximized()) {
             stage.setMaximized(false);
-            double X_width = stage.getWidth();
-            titleLabel.setLayoutX((X_width-135)/2);
-            windowButtons.setLayoutX(X_width-115);
-            topPane.setLayoutX(X_width);
-            btMax.setText("□");
+            updateLayout(135, 115, stage.getWidth(), "□");
         } else {
             stage.setMaximized(true);
-            double X_width = stage.getWidth();
-            titleLabel.setLayoutX((X_width-135)/2);
-            windowButtons.setLayoutX(X_width-115);
-            topPane.setLayoutX(X_width);
-            btMax.setText("❐");
+            updateLayout(135, 115, stage.getWidth(), "❐");
         }
-        System.out.println("Width" + topPane.getLayoutX());
     }
 
-//    #showPane1
-private void hideAllPanesExcept(VBox paneToShow) {
-    paneAnime.setVisible(false);
-    paneManga.setVisible(false);
-    paneCharacters.setVisible(false);
-    paneGenres.setVisible(false);
-    panePeople.setVisible(false);
-    paneProducers.setVisible(false);
-    paneSettings.setVisible(false);
-    paneAbout.setVisible(false);
-    paneToShow.setVisible(true);
-}
+    private void updateLayout(double titleLabelX, double windowButtonsX, double topPaneX, String buttonText) {
+        titleLabel.setLayoutX((topPaneX - titleLabelX) / 2);
+        windowButtons.setLayoutX(topPaneX - windowButtonsX);
+        topPane.setLayoutX(topPaneX);
+        btMax.setText(buttonText);
+    }
+
+    private Stage getStage() {
+        return (Stage) btClose.getScene().getWindow();
+    }
+
+    private void hideAllPanesExcept(VBox paneToShow) {
+        paneAnime.setVisible(false);
+        paneManga.setVisible(false);
+        paneCharacters.setVisible(false);
+        paneGenres.setVisible(false);
+        panePeople.setVisible(false);
+        paneProducers.setVisible(false);
+        paneSettings.setVisible(false);
+        paneAbout.setVisible(false);
+        paneToShow.setVisible(true);
+    }
+
     public void showPaneAnime() {
         hideAllPanesExcept(paneAnime);
     }
